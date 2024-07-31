@@ -48,4 +48,24 @@ window.addEventListener('scroll', () => {
   }
 })
 
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.querySelector('.switchcircle');
+  const body = document.body;
+  const icon = document.querySelector('.switchcircle ion-icon');
+  let isDarkMode = false;
 
+  toggle.addEventListener('click', function() {
+      if (isDarkMode) {
+          // Switch to light mode
+          body.style.backgroundColor = 'white';
+          body.style.color = 'black';
+          icon.setAttribute('name', 'moon-outline');
+      } else {
+          // Switch to dark mode
+          body.style.backgroundColor = 'black';
+          body.style.color = 'white';
+          icon.setAttribute('name', 'sunny-outline');
+      }
+      isDarkMode = !isDarkMode;
+  });
+});
